@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite CloudSEN12 paper"
+authors:
+- family-names: "Aybar"
+  given-names: "Cesar"
+  orcid: "https://orcid.org/0000-0003-2745-9535"
+  affiliation: "Universitat de Valencia"
+- family-names: "Mateo-Garcia"
+  given-names: "Gonzalo"
+  orcid: "https://orcid.org/0000-0002-0569-393X"
+  affiliation: "Universitat de Valencia"
+title: "cloudsen12_models"
+version: 0.1
+doi: 10.1038/s41597-022-01878-2
+date-released: 2024-07-11
+url: "https://www.nature.com/articles/s41597-022-01878-2"
