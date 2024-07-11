@@ -1,6 +1,8 @@
 [![Article DOI:10.1038/s41597-022-01878-2](https://img.shields.io/badge/Article%20DOI-10.1038%2Fs41597.022.01878.2-blue)](https://doi.org/10.1038/s41597-022-01878-2)  [![PyPI](https://img.shields.io/pypi/v/cloudsen12_models)](https://pypi.org/project/cloudsen12_models/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cloudsen12_models)](https://pypi.org/project/cloudsen12_models/) [![PyPI - License](https://img.shields.io/pypi/l/cloudsen12_models)](https://github.com/spaceml-org/cloudsen12_models/blob/main/LICENSE)
 
-# cloudsen12_models
+<p align="center">
+	<img src="https://raw.githubusercontent.com/IPL-UV/cloudsen12_models/main/notebooks/logo.webp" alt="Logo" width='5%'> CloudSEN12
+</p>
 
 This package contains minimum code to run the CloudSEN12 models proposed in [Aybar et al. 2023](https://www.nature.com/articles/s41597-022-01878-02). It uses the [georeader](https://github.com/spaceml-org/georeader) package which only depends on rasterio and geopandas libraries.
 
