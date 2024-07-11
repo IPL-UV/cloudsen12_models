@@ -4,8 +4,9 @@
 
 This package contains minimum code to run the CloudSEN12 models proposed in [Aybar et al. 2023](https://www.nature.com/articles/s41597-022-01878-02). It uses the [georeader](https://github.com/spaceml-org/georeader) package which only depends on rasterio and geopandas libraries.
 
-The notebook [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_models/blob/main/notebooks/run_in_gee_image.ipynb) has a minimum example of running the model.
+The notebook [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_models/blob/main/notebooks/run_in_gee_image.ipynb) has a minimum example of running the model on a Sentinel-2 image downloaded from the Google Earth Engine:
 
+ <img src="https://raw.githubusercontent.com/IPL-UV/cloudsen12_models/main/notebooks/example_flood_dubai_2024.png">
 
 ## Citation
 
