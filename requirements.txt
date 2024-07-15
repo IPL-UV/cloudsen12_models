@@ -1,3 +1,4 @@
 georeader-spaceml>=1.0
 torch>=1.13
+segmentation_models_pytorch
 huggingface_hub
