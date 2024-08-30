@@ -28,6 +28,14 @@ MODELS_CLOUDSEN12 = {
                     "model_file": "cloudsen12.pt",
              "bands": S2_SAFE_reader.BANDS_S2_L1C, 
              "type": "weights"},
+    "UNetMobV2_V1" : {
+                    "model_file": "UNetMobV2_V1.pt",
+             "bands": S2_SAFE_reader.BANDS_S2_L1C, 
+             "type": "weights"},
+    "UNetMobV2_V2" : {
+                    "model_file": "UNetMobV2_V2.pt",
+             "bands": S2_SAFE_reader.BANDS_S2_L1C, 
+             "type": "weights"},
     "cloudsen12l2a":{
         "model_file": "cloudsen12l2a.pt",
         "bands": S2_SAFE_reader.BANDS_S2_L2A,
@@ -181,7 +189,11 @@ def load_model_by_name(name:str, weights_folder:str="cloudsen12_models",
         if not os.path.exists(weights_file):
             download_weights(weights_file)
         weights = torch.load(weights_file, map_location=device)
-        model.load_state_dict(weights["state_dict"])
+        if "state_dict" in weights:
+            model.load_state_dict(weights["state_dict"])
+        else:
+            model.model.load_state_dict(weights)
+        
     else:
         if not os.path.exists(weights_file):
             download_weights(weights_file)
