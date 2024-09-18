@@ -13,7 +13,7 @@ The notebook [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_model
 For more examples see [cloudsen12.github.io](https://cloudsen12.github.io/).
 
 ## models
-With this package, the following models can be loaded with the function`cloudsen12.load_model_by_name(name=name_of_model)`
+With this package, the following models can be loaded: (with the function [`cloudsen12.load_model_by_name()`](https://github.com/IPL-UV/cloudsen12_models/blob/main/cloudsen12_models/cloudsen12.py#L167))
 
 * **cloudsen12** Model trained on the 13 bands of Sentinel-2 L1C in the CloudSEN12 dataset.
 * **cloudsen12l2a**  Model trained on the 12 bands of Sentinel-2 L2A in the CloudSEN12 dataset.
