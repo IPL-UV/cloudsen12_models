@@ -12,6 +12,16 @@ The notebook [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_model
 
 For more examples see [cloudsen12.github.io](https://cloudsen12.github.io/).
 
+## models
+With this package, the following models can be loaded with the function`cloudsen12.load_model_by_name(name=name_of_model)`
+
+* **cloudsen12** Model trained on the 13 bands of Sentinel-2 L1C in the CloudSEN12 dataset.
+* **cloudsen12l2a**  Model trained on the 12 bands of Sentinel-2 L2A in the CloudSEN12 dataset.
+* **dtacs4bands** Model trained on the NIR, RED, GREEN and BLUE bands of Sentinel-2 L1C in the CloudSEN12 dataset. Bands: `["B08", "B04", "B03", "B02"]`
+* **landsat30** Model trained on the common bands of Sentinel-2 L1C and Landsat 8 and 9 in the CloudSEN12 dataset. Bands: `['B01', 'B02', 'B03', 'B04', 'B08', 'B10', 'B11', 'B12']`.
+* **UNetMobV2_V1** Model trained on the 13 bands of Sentinel-2 L1C in the CloudSEN12 dataset. The cloud masks of this model are included in CloudSEN12+ dataset.
+* **UNetMobV2_V2** Model trained on the 13 bands of Sentinel-2 L1C in the CloudSEN12+.
+
 ## Citation
 
 If you find this code useful please cite:
