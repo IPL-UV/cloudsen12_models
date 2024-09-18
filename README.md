@@ -10,7 +10,7 @@ The notebook [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_model
 
  <img src="https://raw.githubusercontent.com/IPL-UV/cloudsen12_models/main/notebooks/example_flood_dubai_2024.png">
 
-For more examples see [cloudsen12.github.io](https://cloudsen12.github.io/).
+For examples about dataset use and training see [cloudsen12.github.io](https://cloudsen12.github.io/).
 
 ## models
 With this package, the following models can be loaded: (with the function [`cloudsen12.load_model_by_name()`](https://github.com/IPL-UV/cloudsen12_models/blob/main/cloudsen12_models/cloudsen12.py#L167))
