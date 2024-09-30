@@ -33,7 +33,7 @@ If you find this code useful please cite:
 	url = {https://www.sciencedirect.com/science/article/pii/S2352340924008163},
 	doi = {10.1016/j.dib.2024.110852},
 	journal = {Data in Brief},
-	author = {Aybar, Cesar and Bautista, Lesly and Montero, David and Contreras, Julio and Ayala, Daryl and Prudencio, Fernando and Loja, Jhomira and Ysuhuaylas, Luis and Herrera, Fernando and Gonzales, Karen and Valladares, Jeanett and Flores, Lucy A. and Mamani, Evelin and Quiñonez, Maria and Fajardo, Rai and Espinoza, Wendy and Limas, Antonio and Yali, Roy and Alcántara, Alejandro and Leyva, Martin and Loayza-Muro, Rau´l and Willems, Bram and Mateo-García, Gonzalo and Gómez-Chova, Luis},
+	author = {Aybar, Cesar and Bautista, Lesly and Montero, David and Contreras, Julio and Ayala, Daryl and Prudencio, Fernando and Loja, Jhomira and Ysuhuaylas, Luis and Herrera, Fernando and Gonzales, Karen and Valladares, Jeanett and Flores, Lucy A. and Mamani, Evelin and Quiñonez, Maria and Fajardo, Rai and Espinoza, Wendy and Limas, Antonio and Yali, Roy and Alcántara, Alejandro and Leyva, Martin and Loayza-Muro, Raúl and Willems, Bram and Mateo-García, Gonzalo and Gómez-Chova, Luis},
 	month = aug,
 	year = {2024},
 	pages = {110852},
