@@ -4,13 +4,31 @@
 	<a href="https://cloudsen12.github.io/"> CloudSEN12 </a> 
 </h1>
 
-This package contains minimum code to run the CloudSEN12 models proposed in [Aybar et al. 2022](https://www.nature.com/articles/s41597-022-01878-02) and [Aybar et al. 2024](https://www.sciencedirect.com/science/article/pii/S2352340924008163). The main dependencies of this package are pytorch and the [georeader](https://github.com/spaceml-org/georeader) package which only depends on rasterio and geopandas libraries.
+This package contains minimum code to run the CloudSEN12 models☁️ proposed in [Aybar et al. 2022](https://www.nature.com/articles/s41597-022-01878-02) and [Aybar et al. 2024](https://www.sciencedirect.com/science/article/pii/S2352340924008163). The main dependencies of this package are pytorch and the [georeader](https://github.com/spaceml-org/georeader) package which only depends on rasterio and geopandas libraries.
 
-The notebook [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_models/blob/main/notebooks/run_in_gee_image.ipynb) has an example of running the model on a Sentinel-2 image downloaded from the Google Earth Engine:
+```python
+# Read S2 image from Google Earth Engine
+bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
+img_local = ee_image.export_image_getpixels(asset_id='COPERNICUS/S2_HARMONIZED/20240417T064631_20240417T070110_T40RCN',
+                                            proj={"crs": 'EPSG:32640', "transform":  [10, 0, 300000, 0, -10, 2800020]},
+                                            bands_gee=bands,
+                                            geometry=box(55.325, 25.225, 55.415, 25.28))
 
+# Load model
+modelv2 = cloudsen12.load_model_by_name(name="UNetMobV2_V2", weights_folder="cloudsen12_models")
+
+# Compute cloud mask
+cloudmaskv2 = modelv2.predict(img_local/10_000)
+
+# Plot
+fig, ax = plt.subplots(1,2,figsize=(14,5),sharey=True, tight_layout=True)
+rgb = (img_local.isel({"band": [bands.index(b) for b in ["B4","B3","B2"]]}) / 4_500.).clip(0,1)
+plot.show(rgb,ax=ax[0])
+cloudsen12.plot_cloudSEN12mask(cloudmaskv2,ax=ax[1])
+```
  <img src="https://raw.githubusercontent.com/IPL-UV/cloudsen12_models/main/notebooks/example_flood_dubai_2024.png">
 
-For examples about dataset use and training see [cloudsen12.github.io](https://cloudsen12.github.io/).
+Full example at: [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_models/blob/main/notebooks/run_in_gee_image.ipynb).
 
 ## models
 With this package, the following models can be loaded: (with the function [`cloudsen12.load_model_by_name()`](https://github.com/IPL-UV/cloudsen12_models/blob/main/cloudsen12_models/cloudsen12.py#L167))
@@ -21,6 +39,9 @@ With this package, the following models can be loaded: (with the function [`clou
 * **landsat30** Model trained on the common bands of Sentinel-2 L1C and Landsat 8 and 9 in the CloudSEN12 dataset. Bands: `['B01', 'B02', 'B03', 'B04', 'B08', 'B10', 'B11', 'B12']`.
 * **UNetMobV2_V1** Model trained on the 13 bands of Sentinel-2 L1C in the CloudSEN12 dataset. The cloud masks of this model are included in CloudSEN12+ dataset.
 * **UNetMobV2_V2** Model trained on the 13 bands of Sentinel-2 L1C in the CloudSEN12+.
+
+
+For examples about dataset use and training see [cloudsen12.github.io](https://cloudsen12.github.io/).
 
 ## Citation
 
