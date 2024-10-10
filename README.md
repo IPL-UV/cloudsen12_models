@@ -4,8 +4,13 @@
 	<a href="https://cloudsen12.github.io/"> CloudSEN12 </a> 
 </h1>
 
-This package contains minimum code to run the CloudSEN12 models☁️ proposed in [Aybar et al. 2022](https://www.nature.com/articles/s41597-022-01878-02) and [Aybar et al. 2024](https://www.sciencedirect.com/science/article/pii/S2352340924008163). The main dependencies of this package are pytorch and the [georeader](https://github.com/spaceml-org/georeader) package which only depends on rasterio and geopandas libraries.
+This package contains minimum code to run the CloudSEN12 models☁️ proposed in [Aybar et al. 2022](https://www.nature.com/articles/s41597-022-01878-02) and [Aybar et al. 2024](https://www.sciencedirect.com/science/article/pii/S2352340924008163). 
 
+```
+pip install cloudsen12_models
+```
+
+Run:
 ```python
 # Read S2 image from Google Earth Engine
 bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
