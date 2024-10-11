@@ -35,7 +35,7 @@ cloudsen12.plot_cloudSEN12mask(cloudmaskv2,ax=ax[1])
 
 Full example at: [run_in_gee_image.ipynb](https://github.com/IPL-UV/cloudsen12_models/blob/main/notebooks/run_in_gee_image.ipynb).
 
-## models
+## models [![HF](https://img.shields.io/badge/%F0%9F%A4%97-Models-yellow)](https://huggingface.co/isp-uv-es/cloudsen12_models)
 With this package, the following models can be loaded: (with the function [`cloudsen12.load_model_by_name()`](https://github.com/IPL-UV/cloudsen12_models/blob/main/cloudsen12_models/cloudsen12.py#L167))
 
 * **cloudsen12** Model trained on the 13 bands of Sentinel-2 L1C in the CloudSEN12 dataset.
