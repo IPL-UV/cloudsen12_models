@@ -72,8 +72,7 @@ def download_weights(weights_file:str):
         os.makedirs(dirdownload, exist_ok=True)
         model_file_path = hf_hub_download(repo_id="isp-uv-es/cloudsen12_models",
                                           filename=model_file,
-                                          local_dir=dirdownload,
-                                          local_dir_use_symlinks=False)
+                                          local_dir=dirdownload)
         if model_file_path != weights_file:
             raise ValueError(f"Error downloading {weights_file} file is downloaded in {model_file_path}")
         if not os.path.exists(weights_file):
