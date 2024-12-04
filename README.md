@@ -13,11 +13,11 @@ pip install cloudsen12_models
 Run:
 ```python
 # Read S2 image from Google Earth Engine
-bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
-img_local = ee_image.export_image_getpixels(asset_id='COPERNICUS/S2_HARMONIZED/20240417T064631_20240417T070110_T40RCN',
-                                            proj={"crs": 'EPSG:32640', "transform":  [10, 0, 300000, 0, -10, 2800020]},
-                                            bands_gee=bands,
-                                            geometry=box(55.325, 25.225, 55.415, 25.28))
+bands_gee = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
+img_local = ee_image.export_image(asset_id='COPERNICUS/S2_HARMONIZED/20240417T064631_20240417T070110_T40RCN',
+                                  crs='EPSG:32640',transform=Affine(*[10, 0, 300000, 0, -10, 2800020]),
+                                  bands_gee=bands_gee,
+                                  geometry=box(55.325, 25.225, 55.415, 25.28))
 
 # Load model
 modelv2 = cloudsen12.load_model_by_name(name="UNetMobV2_V2", weights_folder="cloudsen12_models")
@@ -27,7 +27,7 @@ cloudmaskv2 = modelv2.predict(img_local/10_000)
 
 # Plot
 fig, ax = plt.subplots(1,2,figsize=(14,5),sharey=True, tight_layout=True)
-rgb = (img_local.isel({"band": [bands.index(b) for b in ["B4","B3","B2"]]}) / 4_500.).clip(0,1)
+rgb = (img_local.isel({"band": [bands_gee.index(b) for b in ["B4","B3","B2"]]}) / 4_500.).clip(0,1)
 plot.show(rgb,ax=ax[0])
 cloudsen12.plot_cloudSEN12mask(cloudmaskv2,ax=ax[1])
 ```
