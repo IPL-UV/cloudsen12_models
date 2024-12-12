@@ -14,7 +14,7 @@ Run:
 ```python
 # Read S2 image from Google Earth Engine
 bands_gee = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B10', 'B11', 'B12']
-img_local = ee_image.export_image(asset_id='COPERNICUS/S2_HARMONIZED/20240417T064631_20240417T070110_T40RCN',
+img_local = ee_image.export_image('COPERNICUS/S2_HARMONIZED/20240417T064631_20240417T070110_T40RCN',
                                   crs='EPSG:32640',transform=Affine(*[10, 0, 300000, 0, -10, 2800020]),
                                   bands_gee=bands_gee,
                                   geometry=box(55.325, 25.225, 55.415, 25.28))
