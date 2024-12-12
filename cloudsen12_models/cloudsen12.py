@@ -22,7 +22,6 @@ COLORS_CLOUDSEN12 = np.array([[139, 64, 0], # clear
                              dtype=np.float32) / 255
 
 
-# Models stored in this folder https://drive.google.com/drive/folders/1gpqEOWZRHlxLSJMMc3TXW7BRDuGBkDRa?usp=drive_link
 MODELS_CLOUDSEN12 = {
     "cloudsen12" : {
                     "model_file": "cloudsen12.pt",
@@ -37,7 +36,7 @@ MODELS_CLOUDSEN12 = {
              "bands": S2_SAFE_reader.BANDS_S2_L1C, 
              "type": "weights"},
     "cloudsen12l2a":{
-        "model_file": "cloudsen12l2a.pt",
+        "model_file": "cloudsen12-s2-l2a-1.0.0.pt",
         "bands": S2_SAFE_reader.BANDS_S2_L2A,
         "type": "jit"
     },
@@ -60,7 +59,7 @@ def download_weights(weights_file:str):
         weights_file (str): path to weights file
 
     Raises:
-        ImportError: if gdown is not installed
+        ImportError: if huggingface_hub is not installed
     
     Example:
         >>> download_weights("weights/s2models/cloudsen12.ckpt", MODELS_CLOUDSEN12['all']['url'])
