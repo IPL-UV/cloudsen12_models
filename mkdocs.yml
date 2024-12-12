@@ -1,0 +1,71 @@
+docs_dir: .
+
+site_name: cloudsen12_models
+repo_url: https://github.com/IPL-UV/cloudsen12_models
+site_url: https://IPL-UV.github.io/cloudsen12_models
+site_description: 🛰️ CloudSEN12 models
+site_author: Gonzalo Mateo-García
+edit_uri: edit/main/docs/
+repo_name: cloudsen12_models
+use_directory_urls: false
+
+# Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: '#d49f0c'
+      accent: '#d49f0c'
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: '#201357'
+      accent: white
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: notebooks/logo.webp
+  favicon: notebooks/logo.webp
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - navigation.expand
+    - navigation.indexes
+    - header.autohide   
+
+
+nav:
+  - Home: 
+    - README.md
+  - Tutorials:
+    - Inference Sentinel-2: notebooks/run_in_gee_image.ipynb
+
+# Plugins
+plugins:
+  - search
+  - same-dir
+  - awesome-pages
+  - mkdocstrings
+  - mknotebooks:
+      execute: false
+      timeout: 100
+      allow_errors: false
+
+markdown_extensions:
+  - meta
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.pathconverter
+  - pymdownx.tabbed
+  - mdx_truly_sane_lists
+  - pymdownx.tasklist
+
+extra_css:
+  - assets/style.css
