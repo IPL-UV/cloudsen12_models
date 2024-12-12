@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+cloudsen12_models/__init__.py
+cloudsen12_models/cloudsen12.py
+cloudsen12_models/utils_torch.py
+cloudsen12_models.egg-info/PKG-INFO
+cloudsen12_models.egg-info/SOURCES.txt
+cloudsen12_models.egg-info/dependency_links.txt
+cloudsen12_models.egg-info/requires.txt
+cloudsen12_models.egg-info/top_level.txt
