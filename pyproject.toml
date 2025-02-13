@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cloudsen12_models"
-version = "0.5"
+version = "0.5.1"
 description = "🛰️ CloudSEN12 models"
 authors = ["Gonzalo Mateo-García", "Cesar Aybar"]
 repository = "https://github.com/IPL-UV/cloudsen12_models"

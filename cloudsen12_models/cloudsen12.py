@@ -186,7 +186,7 @@ def load_model_by_name(name:str, weights_folder:str="cloudsen12_models",
         model = CDModel(device=device, bands=MODELS_CLOUDSEN12[name]["bands"])
         if not os.path.exists(weights_file):
             download_weights(weights_file)
-        weights = torch.load(weights_file, map_location=device)
+        weights = torch.load(weights_file, map_location=device, weights_only=True)
         if "state_dict" in weights:
             model.load_state_dict(weights["state_dict"])
         else:
