@@ -15,7 +15,6 @@ packages = [
 python = ">=3.10,<4.0"
 rasterio = ">=1"
 numpy = ">=1"
-
 torch = ">=2"
 segmentation-models-pytorch = ">=0.3"
 tqdm = ">=4"
