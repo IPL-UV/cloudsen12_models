@@ -162,7 +162,7 @@ class CDModel(torch.nn.Module):
         return pred
 
 
-def load_model_by_name(name:str, weights_folder:str="cloudsen12_models", 
+def load_model_by_name(name:str, weights_folder:Optional[str]=None, 
                        device:torch.device=torch.device("cpu")) -> CDModel:
     f"""
     Load a model by name
@@ -179,6 +179,10 @@ def load_model_by_name(name:str, weights_folder:str="cloudsen12_models",
     """
     if name not in MODELS_CLOUDSEN12:
         raise ValueError(f"Model name {name} not in {MODELS_CLOUDSEN12.keys()}")
+    
+    if weights_folder is None:
+        weights_folder = os.path.join(os.path.expanduser('~'),".georeader")
+    os.makedirs(weights_folder, exist_ok=True)
     
     weights_file = os.path.join(weights_folder, MODELS_CLOUDSEN12[name]['model_file'])
 
